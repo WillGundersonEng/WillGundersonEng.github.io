@@ -5,192 +5,223 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Will Gunderson – Composite Materials Engineer</title>
 
-  <!-- Google Fonts + Font Awesome icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <!-- System font stack (modern + boring) -->
   <style>
     :root {
-      --primary: #00529b;
-      --accent: #ff7f50;
-      --bg: #f7f9fc;
-      --text: #222;
-      --card: #ffffff;
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-    a { color: var(--primary); text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: 90%; max-width: 1100px; margin: auto; }
 
-    /* Header / Hero */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header */
     header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-      padding: 4rem 0 3rem;
-      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 0;
+      background: var(--surface);
     }
-    header h1 { font-size: 2.5rem; font-weight: 600; }
-    header p { font-size: 1.1rem; margin-top: .5rem; opacity: .9; }
-    .btn {
-      display: inline-block;
-      margin-top: 1.2rem;
-      padding: .7rem 1.8rem;
-      background: #fff;
-      color: var(--primary);
-      border-radius: 30px;
+
+    header h1 {
+      font-size: 2.2rem;
       font-weight: 600;
-      transition: .3s;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,.15); }
+
+    header p {
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
 
     /* Sections */
-    section { padding: 3rem 0; }
-    h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    section {
+      padding: 3rem 0;
     }
-    .card {
-      background: var(--card);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
-      transition: .3s;
+
+    section h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,.12); }
-    .card img { height: 180px; object-fit: cover; }
-    .card-body { padding: 1.2rem; }
-    .card-body h3 { margin-bottom: .5rem; font-size: 1.2rem; }
-    .tags {
-      display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem;
-    }
-    .tags span {
-      background: var(--primary);
-      color: #fff; font-size: .7rem; padding: .2rem .6rem; border-radius: 4px;
+
+    p {
+      max-width: 70ch;
     }
 
     /* Skills */
     #skills ul {
       list-style: none;
-      display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.5rem 1rem;
     }
+
     #skills li {
-      background: var(--accent);
-      color: #fff; padding: .4rem 1rem; border-radius: 20px; font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .tags span:not(:last-child)::after {
+      content: " · ";
+    }
+
+    /* Resume */
+    #resume {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
     }
 
     /* Contact */
-    #contact {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
+    #contact p {
+      color: var(--muted);
     }
-    #contact a { color: #ffd; }
-    .socials {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-    }
-    .socials a { margin: 0 .5rem; }
 
     /* Footer */
     footer {
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
       text-align: center;
-      padding: 1.2rem 0;
-      font-size: .85rem;
-      color: #666;
     }
 
-    /* Responsive tweaks */
-    @media(max-width:600px){
-      header h1 { font-size: 2rem; }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- HERO -->
 <header>
   <div class="container">
     <h1>Will Gunderson</h1>
-    <p>Composite Materials Engineer | Class of 2028</p>
-    <a class="btn" href="#projects">See My Work</a>
+    <p>Composite Materials Engineering · Class of 2028</p>
   </div>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <p>
-      I'm a composite materials engineering major passionate about designing lightweight, high-performance structures for aerospace, automotive, and renewable-energy applications. 
-      From hand-layup prototypes to finite-element simulation, I love turning fibers and resin into real-world hardware.
+      Composite materials engineering student focused on lightweight structural design,
+      manufacturing processes, and failure analysis. Interested in aerospace,
+      automotive, and energy applications.
     </p>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
-    <h2>Skills & Tools</h2>
+    <h2>Skills</h2>
     <ul>
-      <li>Carbon / Glass Fiber Prepreg</li>
-      <li>RTM & VARTM Processing</li>
-      <li>ANSYS Mechanical APDL</li>
-      <li>Abaqus / FEA</li>
-      <li>MATLAB / Python</li>
-      <li>SolidWorks & CATIA</li>
-      <li>ASTM Testing Standards</li>
+      <li>Carbon & Glass Fiber Composites</li>
+      <li>Prepreg, RTM, VARTM</li>
+      <li>ANSYS Mechanical / Abaqus</li>
+      <li>Finite Element Analysis</li>
+      <li>SolidWorks</li>
+      <li>MATLAB & Python</li>
+      <li>ASTM Mechanical Testing</li>
       <li>DMA / DSC / SEM</li>
     </ul>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
     <div class="grid">
 
-      <!-- Project 1 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=60" alt="CFRP wing spar">
-        <div class="card-body">
-          <h3>CFRP Wing Spar Cap</h3>
-          <p>Designed and fabricated a carbon-epoxy spar cap for a 2 m RC sailplane, achieving 30 % weight savings vs. aluminum.</p>
-          <div class="tags">
-            <span>ANSYS</span><span>Prepreg</span><span>3-Point Bend</span>
-          </div>
+        <h3>CFRP Wing Spar Cap</h3>
+        <p>
+          Designed and fabricated a carbon-epoxy spar cap for a 2 m RC sailplane,
+          achieving ~30% weight reduction compared to aluminum.
+        </p>
+        <div class="tags">
+          <span>ANSYS</span><span>Prepreg</span><span>Mechanical Testing</span>
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1566937569145-3cb21b38b5be?auto=format&fit=crop&w=800&q=60" alt="wind-turbine blade">
-        <div class="card-body">
-          <h3>Glass/Epoxy Wind-Turbine Blade</h3>
-          <p>Co-led layup of 1.5 m blade shell via VARTM; validated natural frequency with modal hammer testing within 4 % of FEA.</p>
-          <div class="tags">
-            <span>VARTM</span><span>Modal Analysis</span><span>Python</span>
-          </div>
+        <h3>Glass/Epoxy Wind Turbine Blade</h3>
+        <p>
+          Co-led VARTM layup of a 1.5 m blade shell and validated modal response
+          within 4% of FEA predictions.
+        </p>
+        <div class="tags">
+          <span>VARTM</span><span>Modal Analysis</span><span>Python</span>
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1606768661922-38a9c1a49f85?auto=format&fit=crop&w=800&q=60" alt="3d printed mold">
-        <div class="card-body">
-          <h3>3D-Printed Dissolvable Mandrel</h3>
-          <p>Developed a water-soluble PVA mandrel for a hollow composite driveshaft, eliminating secondary machining.</p>
-          <div class="tags">
-            <span>Design for AM</span><span>SolidWorks</span><span>RTM</span>
-          </div>
+        <h3>Dissolvable Composite Mandrel</h3>
+        <p>
+          Developed a water-soluble PVA mandrel for hollow composite components,
+          eliminating secondary machining steps.
+        </p>
+        <div class="tags">
+          <span>Design for AM</span><span>RTM</span><span>SolidWorks</span>
         </div>
       </div>
 
@@ -198,35 +229,36 @@
   </div>
 </section>
 
-<!-- RESUME -->
 <section id="resume">
-  <div class="container" style="text-align:center;">
+  <div class="container">
     <h2>Résumé</h2>
-    <p>Download a one-page PDF résumé for more detail on coursework, work experience, and leadership.</p>
-    <a class="btn" href="assets/WillGunderson_Resume.pdf" download>Download PDF</a>
+    <p>
+      One-page PDF résumé with coursework, experience, and projects.
+    </p>
+    <p>
+      <a href="assets/WillGunderson_Resume.pdf" download>Download résumé</a>
+    </p>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <h2>Let’s Connect</h2>
-    <p>Research, internships, or just talking shop—feel free to reach out.</p>
-    <a href="mailto:will.gunderson@email.edu">will.gunderson@email.edu</a>
-    <div class="socials">
-      <a href="https://linkedin.com/in/willgunderson" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/willgunderson" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:will.gunderson@email.edu">will.gunderson@email.edu</a><br/>
+      <a href="https://linkedin.com/in/willgunderson">LinkedIn</a> ·
+      <a href="https://github.com/willgunderson">GitHub</a>
+    </p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © <span id="yr"></span> Will Gunderson. Built with vanilla HTML/CSS/JS.
+  © <span id="yr"></span> Will Gunderson
 </footer>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
