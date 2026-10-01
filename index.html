@@ -2,152 +2,259 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Will Gunderson | Engineering Portfolio</title>
+
 
   <style>
 
     :root {
+
       --bg: #f9fafb;
+
       --surface: #ffffff;
+
       --text: #111827;
+
       --muted: #6b7280;
+
       --border: #e5e7eb;
+
       --accent: #2563eb;
+
     }
+
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
+
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
       background: var(--bg);
+
       color: var(--text);
+
       line-height: 1.6;
+
     }
+
 
     a {
+
       color: var(--accent);
+
       text-decoration: none;
+
     }
+
 
     a:hover {
+
       text-decoration: underline;
+
     }
+
 
     img {
+
       max-width: 100%;
+
       display: block;
+
     }
 
+
     .container {
+
       max-width: 1000px;
+
       margin: 0 auto;
+
       padding: 0 1.25rem;
+
     }
+
 
 
     /* =====================================================
        HEADER
     ===================================================== */
 
+
     header {
+
       border-bottom: 1px solid var(--border);
+
       padding: 3rem 0;
+
       background: var(--surface);
+
     }
+
 
     header h1 {
+
       font-size: 2.4rem;
+
       font-weight: 650;
+
     }
 
+
     header p {
+
       color: var(--muted);
+
       margin-top: 0.5rem;
+
       font-size: 1.05rem;
+
     }
+
 
 
     /* =====================================================
        NAVIGATION
     ===================================================== */
 
+
     nav {
+
       background: var(--surface);
+
       border-bottom: 1px solid var(--border);
+
     }
+
 
     nav .container {
+
       display: flex;
+
       gap: 1.5rem;
+
       padding-top: 0.8rem;
+
       padding-bottom: 0.8rem;
+
     }
+
 
     nav a {
+
       color: var(--muted);
+
       font-size: 0.9rem;
+
     }
 
+
     nav a:hover {
+
       color: var(--text);
+
       text-decoration: none;
+
     }
+
 
 
     /* =====================================================
        SECTIONS
     ===================================================== */
 
+
     section {
+
       padding: 3.5rem 0;
+
     }
+
 
     section h2 {
+
       font-size: 1.6rem;
+
       font-weight: 600;
+
       margin-bottom: 1.5rem;
+
     }
+
 
     section h2::after {
+
       content: "";
+
       display: block;
+
       width: 45px;
+
       height: 3px;
+
       background: var(--accent);
+
       margin-top: 0.5rem;
+
     }
 
+
     p {
+
       max-width: 70ch;
+
     }
+
 
 
     /* =====================================================
        ABOUT
     ===================================================== */
 
+
     #about p {
+
       color: var(--muted);
+
       font-size: 1rem;
+
     }
+
 
 
     /* =====================================================
        SKILLS
     ===================================================== */
+
 
     #skills ul {
 
@@ -162,20 +269,30 @@
 
     }
 
+
     #skills li {
+
       color: var(--muted);
+
     }
 
+
     #skills li::before {
+
       content: "•";
+
       color: var(--accent);
+
       margin-right: 0.5rem;
+
     }
+
 
 
     /* =====================================================
        PROJECT GRID
     ===================================================== */
+
 
     .grid {
 
@@ -186,12 +303,16 @@
 
       gap: 1.5rem;
 
+      align-items: stretch;
+
     }
+
 
 
     /* =====================================================
        PROJECT CARDS
     ===================================================== */
+
 
     .card {
 
@@ -199,15 +320,19 @@
 
       border: 1px solid var(--border);
 
-      border-radius: 6px;
+      border-radius: 8px;
 
       overflow: hidden;
 
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+      height: 100%;
 
     }
+
 
     .card:hover {
 
@@ -219,13 +344,52 @@
     }
 
 
-    /* PROJECT IMAGE */
+
+    /* =====================================================
+       CLICKABLE PROJECT CARD
+    ===================================================== */
+
+
+    .project-card {
+
+      display: block;
+
+      color: inherit;
+
+      cursor: pointer;
+
+    }
+
+
+    .project-card:hover {
+
+      text-decoration: none;
+
+      border-color: #cbd5e1;
+
+    }
+
+
+    .project-card:focus-visible {
+
+      outline: 3px solid var(--accent);
+
+      outline-offset: 3px;
+
+    }
+
+
+
+    /* =====================================================
+       PROJECT IMAGE
+    ===================================================== */
+
 
     .card-image {
 
       width: 100%;
 
-      height: 210px;
+      height: 220px;
 
       object-fit: cover;
 
@@ -234,13 +398,18 @@
     }
 
 
-    /* PROJECT TEXT */
+
+    /* =====================================================
+       PROJECT TEXT
+    ===================================================== */
+
 
     .card-content {
 
       padding: 1.4rem;
 
     }
+
 
     .card h3 {
 
@@ -249,6 +418,7 @@
       margin-bottom: 0.6rem;
 
     }
+
 
     .card p {
 
@@ -259,9 +429,11 @@
     }
 
 
+
     /* =====================================================
        PROJECT TAGS
     ===================================================== */
+
 
     .tags {
 
@@ -273,33 +445,30 @@
 
     }
 
+
     .tags span:not(:last-child)::after {
+
       content: " · ";
-    }
-
-
-    /* =====================================================
-       PROJECT LINK
-    ===================================================== */
-
-    .project-link {
-
-      display: inline-block;
-
-      margin-top: 1.2rem;
-
-      font-weight: 500;
 
     }
 
 
+
     /* =====================================================
-       COMING SOON PROJECT
+       COMING SOON
     ===================================================== */
+
+
+    .coming-soon-card {
+
+      background: var(--surface);
+
+    }
+
 
     .coming-soon {
 
-      min-height: 210px;
+      height: 220px;
 
       background: #f3f4f6;
 
@@ -313,12 +482,25 @@
 
       font-size: 0.9rem;
 
+      letter-spacing: 0.02em;
+
     }
+
+
+    .coming-soon-card:hover {
+
+      transform: none;
+
+      box-shadow: none;
+
+    }
+
 
 
     /* =====================================================
        RESUME
     ===================================================== */
+
 
     #resume {
 
@@ -332,19 +514,24 @@
 
     }
 
+
     #resume h2::after {
 
       margin-left: auto;
+
       margin-right: auto;
 
     }
+
 
     #resume p {
 
       margin-left: auto;
+
       margin-right: auto;
 
     }
+
 
     .resume-button {
 
@@ -364,6 +551,7 @@
 
     }
 
+
     .resume-button:hover {
 
       text-decoration: none;
@@ -373,9 +561,11 @@
     }
 
 
+
     /* =====================================================
        CONTACT
     ===================================================== */
+
 
     #contact p {
 
@@ -384,9 +574,11 @@
     }
 
 
+
     /* =====================================================
        FOOTER
     ===================================================== */
+
 
     footer {
 
@@ -401,19 +593,28 @@
     }
 
 
+
     /* =====================================================
        MOBILE
     ===================================================== */
 
+
     @media (max-width: 600px) {
 
+
       header {
+
         padding: 2.5rem 0;
+
       }
 
+
       header h1 {
+
         font-size: 1.9rem;
+
       }
+
 
       nav .container {
 
@@ -423,11 +624,23 @@
 
       }
 
+
       section {
+
         padding: 2.5rem 0;
+
+      }
+
+
+      .card-image,
+      .coming-soon {
+
+        height: 200px;
+
       }
 
     }
+
 
   </style>
 
@@ -438,21 +651,32 @@
 <body>
 
 
+
 <!-- =========================================================
      HEADER
 ========================================================= -->
+
 
 <header>
 
   <div class="container">
 
-    <h1>Will Gunderson</h1>
+
+    <h1>
+
+      Will Gunderson
+
+    </h1>
+
 
     <p>
+
       Composite Materials Engineering ·
       Polymer Chemistry & Mathematics ·
       Class of 2028
+
     </p>
+
 
   </div>
 
@@ -464,19 +688,46 @@
      NAVIGATION
 ========================================================= -->
 
+
 <nav>
 
   <div class="container">
 
-    <a href="#about">About</a>
 
-    <a href="#skills">Skills</a>
+    <a href="#about">
 
-    <a href="#projects">Projects</a>
+      About
 
-    <a href="#resume">Résumé</a>
+    </a>
 
-    <a href="#contact">Contact</a>
+
+    <a href="#skills">
+
+      Skills
+
+    </a>
+
+
+    <a href="#projects">
+
+      Projects
+
+    </a>
+
+
+    <a href="#resume">
+
+      Résumé
+
+    </a>
+
+
+    <a href="#contact">
+
+      Contact
+
+    </a>
+
 
   </div>
 
@@ -488,23 +739,33 @@
      ABOUT
 ========================================================= -->
 
+
 <section id="about">
 
   <div class="container">
 
-    <h2>About</h2>
+
+    <h2>
+
+      About
+
+    </h2>
+
 
     <p>
 
-      Composite Materials Engineering student at Winona State University
-      with interests in composite manufacturing, mechanical design,
-      materials engineering, and manufacturing processes.
+      Composite Materials Engineering student at
+      Winona State University with interests in
+      composite manufacturing, mechanical design,
+      materials engineering, and manufacturing
+      processes.
 
-      My experience includes composite fabrication, CAD,
-      machining, 3D printing, engineering analysis, and
-      hands-on prototype development.
+      My experience includes composite fabrication,
+      CAD, machining, 3D printing, engineering
+      analysis, and hands-on prototype development.
 
     </p>
+
 
   </div>
 
@@ -516,39 +777,108 @@
      SKILLS
 ========================================================= -->
 
+
 <section id="skills">
 
   <div class="container">
 
-    <h2>Technical Skills</h2>
+
+    <h2>
+
+      Technical Skills
+
+    </h2>
+
 
     <ul>
 
-      <li>Composite Manufacturing</li>
 
-      <li>Vacuum Resin Infusion</li>
+      <li>
 
-      <li>SolidWorks</li>
+        Composite Manufacturing
 
-      <li>Fusion 360</li>
+      </li>
 
-      <li>3D Printing & Prototyping</li>
 
-      <li>Engineering Drawings</li>
+      <li>
 
-      <li>Machining</li>
+        Vacuum Resin Infusion
 
-      <li>Dimensional Inspection</li>
+      </li>
 
-      <li>Microsoft Excel</li>
 
-      <li>Python</li>
+      <li>
 
-      <li>C++</li>
+        SolidWorks
 
-      <li>R</li>
+      </li>
+
+
+      <li>
+
+        Fusion 360
+
+      </li>
+
+
+      <li>
+
+        3D Printing & Prototyping
+
+      </li>
+
+
+      <li>
+
+        Engineering Drawings
+
+      </li>
+
+
+      <li>
+
+        Machining
+
+      </li>
+
+
+      <li>
+
+        Dimensional Inspection
+
+      </li>
+
+
+      <li>
+
+        Microsoft Excel
+
+      </li>
+
+
+      <li>
+
+        Python
+
+      </li>
+
+
+      <li>
+
+        C++
+
+      </li>
+
+
+      <li>
+
+        R
+
+      </li>
+
 
     </ul>
+
 
   </div>
 
@@ -560,34 +890,41 @@
      PROJECTS
 ========================================================= -->
 
+
 <section id="projects">
 
   <div class="container">
 
-    <h2>Engineering Projects</h2>
+
+    <h2>
+
+      Engineering Projects
+
+    </h2>
+
 
 
     <div class="grid">
 
 
+
       <!-- ===================================================
-           INFUSION TABLE PROJECT
+           MODULAR RESIN INFUSION TABLE
+
+           THE ENTIRE CARD IS A LINK
       ==================================================== -->
 
-      <div class="card">
 
+      <a
+        href="infusion-table.html"
+        class="card project-card"
+        aria-label="View Modular Resin Infusion Table project"
+      >
 
-        <!--
-          Put your project image here:
-
-          images/
-              infusion-table/
-                  hero.jpg
-        -->
 
         <img
 
-          src="images/infusion-table/hero.jpg"
+          src="images/infusion-table-cover.jpg"
 
           alt="Modular resin infusion table prototype"
 
@@ -596,194 +933,224 @@
         >
 
 
+
         <div class="card-content">
 
 
           <h3>
+
             Modular Resin Infusion Table
+
           </h3>
 
 
           <p>
 
-            Designed and tested a reusable vacuum-infusion
-            platform using interchangeable molds to reduce
-            tooling requirements for composite manufacturing.
+            Designed and tested a reusable
+            vacuum-infusion platform using
+            interchangeable molds to reduce tooling
+            requirements for composite manufacturing.
 
-            The prototype successfully maintained vacuum and
-            completed resin infusion testing while identifying
-            opportunities to improve resin flow, sealing, and
-            mold design.
-
-          </p>
-
-
-          <div class="tags">
-
-            <span>VARTM</span>
-
-            <span>Composite Manufacturing</span>
-
-            <span>Thermoforming</span>
-
-            <span>3D Printing</span>
-
-            <span>Prototyping</span>
-
-          </div>
-
-
-          <!--
-              THIS LINKS TO YOUR SECOND HTML PAGE
-          -->
-
-          <a
-
-            href="infusion-table.html"
-
-            class="project-link"
-
-          >
-
-            View Project →
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ===================================================
-           POKER TABLE PROJECT
-      ==================================================== -->
-
-      <div class="card">
-
-
-        <!--
-          Later put an image here:
-
-          images/
-              poker-table/
-                  hero.jpg
-        -->
-
-        <img
-
-          src="images/poker-table/hero.jpg"
-
-          alt="Custom poker table"
-
-          class="card-image"
-
-        >
-
-
-        <div class="card-content">
-
-
-          <h3>
-            Custom Poker Table Design & Build
-          </h3>
-
-
-          <p>
-
-            Designed and manufactured a custom poker table
-            featuring a hardwood rail, upholstered playing
-            surface, pedestal base, integrated cup holders,
-            and removable tabletop mounting system.
+            The prototype successfully maintained
+            vacuum and completed resin infusion testing
+            while identifying opportunities to improve
+            resin flow, sealing, and mold design.
 
           </p>
 
 
+
           <div class="tags">
 
-            <span>Design</span>
 
-            <span>Manufacturing</span>
+            <span>
 
-            <span>Prototyping</span>
+              VARTM
 
-            <span>Woodworking</span>
+            </span>
+
+
+            <span>
+
+              Composite Manufacturing
+
+            </span>
+
+
+            <span>
+
+              Thermoforming
+
+            </span>
+
+
+            <span>
+
+              3D Printing
+
+            </span>
+
+
+            <span>
+
+              Prototyping
+
+            </span>
+
 
           </div>
 
 
-          <!--
-            This link will work once you create poker-table.html
-          -->
-
-          <a
-
-            href="poker-table.html"
-
-            class="project-link"
-
-          >
-
-            View Project →
-
-          </a>
-
-
         </div>
 
-      </div>
+
+      </a>
 
 
 
       <!-- ===================================================
-           FUTURE PROJECT
+           COMING SOON PROJECT 1
       ==================================================== -->
 
-      <div class="card">
+
+      <div class="card coming-soon-card">
 
 
         <div class="coming-soon">
 
-          Future Engineering Project
+          Project Coming Soon
 
         </div>
+
 
 
         <div class="card-content">
 
 
           <h3>
-            More Projects Coming Soon
+
+            Engineering Project
+
           </h3>
 
 
           <p>
 
-            Additional engineering design, manufacturing,
-            materials, and research projects will be added
+            Additional engineering design and
+            manufacturing projects will be added
             as they are completed.
 
           </p>
 
 
+
           <div class="tags">
 
-            <span>Engineering</span>
 
-            <span>Design</span>
+            <span>
 
-            <span>Research</span>
+              Engineering
+
+            </span>
+
+
+            <span>
+
+              Design
+
+            </span>
+
+
+            <span>
+
+              Manufacturing
+
+            </span>
+
 
           </div>
 
 
         </div>
 
+
       </div>
 
 
+
+      <!-- ===================================================
+           COMING SOON PROJECT 2
+      ==================================================== -->
+
+
+      <div class="card coming-soon-card">
+
+
+        <div class="coming-soon">
+
+          Project Coming Soon
+
+        </div>
+
+
+
+        <div class="card-content">
+
+
+          <h3>
+
+            Engineering Project
+
+          </h3>
+
+
+          <p>
+
+            Additional materials, research, and
+            prototype-development projects will be
+            added to the portfolio as they are
+            completed.
+
+          </p>
+
+
+
+          <div class="tags">
+
+
+            <span>
+
+              Materials
+
+            </span>
+
+
+            <span>
+
+              Research
+
+            </span>
+
+
+            <span>
+
+              Prototyping
+
+            </span>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
     </div>
+
 
   </div>
 
@@ -795,11 +1162,17 @@
      RESUME
 ========================================================= -->
 
+
 <section id="resume">
 
   <div class="container">
 
-    <h2>Résumé</h2>
+
+    <h2>
+
+      Résumé
+
+    </h2>
 
 
     <p>
@@ -809,13 +1182,6 @@
 
     </p>
 
-
-    <!--
-      Put your resume here:
-
-      assets/
-          WillGunderson_Resume.pdf
-    -->
 
     <a
 
@@ -842,41 +1208,66 @@
      CONTACT
 ========================================================= -->
 
+
 <section id="contact">
 
   <div class="container">
 
-    <h2>Contact</h2>
+
+    <h2>
+
+      Contact
+
+    </h2>
 
 
     <p>
 
+
       Email:
+
       <a href="mailto:YOUR_EMAIL_HERE">
+
         YOUR_EMAIL_HERE
+
       </a>
+
 
       <br>
 
 
       LinkedIn:
+
       <a
+
         href="YOUR_LINKEDIN_URL"
+
         target="_blank"
+
       >
+
         LinkedIn Profile
+
       </a>
+
 
       <br>
 
 
       GitHub:
+
       <a
+
         href="YOUR_GITHUB_URL"
+
         target="_blank"
+
       >
+
         GitHub Profile
+
       </a>
+
 
     </p>
 
@@ -891,6 +1282,7 @@
      FOOTER
 ========================================================= -->
 
+
 <footer>
 
   © <span id="yr"></span> Will Gunderson
@@ -903,12 +1295,14 @@
      JAVASCRIPT
 ========================================================= -->
 
+
 <script>
 
   document.getElementById("yr").textContent =
     new Date().getFullYear();
 
 </script>
+
 
 
 </body>
