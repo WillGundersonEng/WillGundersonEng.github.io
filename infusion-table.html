@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Modular Resin Infusion Table | Engineering Portfolio</title>
+    <title>Modular Resin Infusion Table | Will Gunderson</title>
+
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
 
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -20,855 +31,1558 @@
             background-color: #f5f6f8;
         }
 
-        /* ---------- HERO ---------- */
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
 
         .hero {
+
             background: #17202a;
+
             color: white;
+
             padding: 80px 20px;
+
             text-align: center;
+
         }
+
 
         .hero h1 {
+
             font-size: 3rem;
+
             margin-bottom: 15px;
+
         }
+
 
         .hero p {
+
             font-size: 1.25rem;
+
             max-width: 800px;
+
             margin: auto;
+
             color: #d5d8dc;
+
         }
 
-        /* ---------- MAIN PAGE ---------- */
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        .back-bar {
+
+            background: white;
+
+            border-bottom: 1px solid #e5e7eb;
+
+        }
+
+
+        .back-bar-inner {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 15px 25px;
+
+        }
+
+
+        .back-link {
+
+            font-size: 0.95rem;
+
+            font-weight: 500;
+
+        }
+
+
+        /* =========================================================
+           MAIN PAGE
+        ========================================================= */
 
         .container {
+
             max-width: 1100px;
+
             margin: auto;
+
             padding: 50px 25px;
+
         }
+
 
         section {
+
             margin-bottom: 70px;
+
         }
+
 
         h2 {
+
             font-size: 2rem;
+
             margin-bottom: 20px;
+
             border-bottom: 3px solid #6c63ff;
+
             padding-bottom: 8px;
+
         }
+
 
         h3 {
+
             margin-top: 25px;
+
             margin-bottom: 10px;
+
         }
+
 
         p {
+
             margin-bottom: 15px;
+
         }
 
-        /* ---------- PROJECT INFO ---------- */
+
+        /* =========================================================
+           PROJECT INFO
+        ========================================================= */
 
         .project-info {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+
             gap: 20px;
+
             margin-top: 35px;
+
         }
+
 
         .info-card {
+
             background: white;
+
             padding: 20px;
+
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.08);
+
         }
+
 
         .info-card strong {
+
             display: block;
+
             margin-bottom: 5px;
+
         }
 
-        /* ---------- IMAGES ---------- */
+
+        /* =========================================================
+           IMAGES
+        ========================================================= */
 
         .hero-image {
+
             width: 100%;
+
             max-height: 550px;
+
             object-fit: cover;
+
             margin-top: 35px;
+
             border-radius: 10px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.12);
+
         }
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .image-grid img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
 
         .single-image {
+
             width: 100%;
+
             max-width: 850px;
+
             display: block;
+
             margin: 30px auto;
+
             border-radius: 8px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.12);
+
         }
+
 
         .caption {
+
             text-align: center;
+
             font-size: 0.9rem;
+
             color: #666;
+
             margin-top: -20px;
+
         }
 
-        /* ---------- LISTS ---------- */
+
+        /* =========================================================
+           LISTS
+        ========================================================= */
 
         ul {
+
             margin-left: 25px;
+
             margin-top: 10px;
+
         }
+
 
         li {
+
             margin-bottom: 8px;
+
         }
 
-        /* ---------- HIGHLIGHT BOX ---------- */
+
+        /* =========================================================
+           HIGHLIGHT BOX
+        ========================================================= */
 
         .highlight {
+
             background: #eef0ff;
+
             border-left: 5px solid #6c63ff;
+
             padding: 20px;
+
             margin: 25px 0;
+
             border-radius: 4px;
+
         }
 
-        /* ---------- RESULT CARDS ---------- */
+
+        /* =========================================================
+           RESULT CARDS
+        ========================================================= */
 
         .result-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
             gap: 20px;
+
             margin-top: 25px;
+
         }
+
 
         .result-card {
+
             background: white;
+
             padding: 25px;
+
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.08);
+
         }
 
-        /* ---------- ANALYSIS ---------- */
+
+        /* =========================================================
+           ENGINEERING ANALYSIS
+        ========================================================= */
 
         .analysis-card {
+
             background: white;
+
             padding: 25px;
+
             margin-bottom: 20px;
+
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.08);
+
         }
 
-        /* ---------- FUTURE WORK ---------- */
+
+        /* =========================================================
+           FUTURE WORK
+        ========================================================= */
 
         .future-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
             gap: 20px;
+
             margin-top: 25px;
+
         }
+
 
         .future-card {
+
             background: #17202a;
+
             color: white;
+
             padding: 25px;
+
             border-radius: 8px;
+
         }
+
 
         .future-card h3 {
+
             margin-top: 0;
+
             color: #b7b2ff;
+
         }
 
-        /* ---------- SKILLS ---------- */
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
 
         .skills {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 10px;
+
             margin-top: 20px;
+
         }
+
 
         .skill {
+
             background: #17202a;
+
             color: white;
+
             padding: 8px 14px;
+
             border-radius: 20px;
+
             font-size: 0.9rem;
+
         }
 
-        /* ---------- FOOTER ---------- */
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         footer {
+
             background: #17202a;
+
             color: #ccc;
+
             text-align: center;
+
             padding: 30px;
+
         }
 
-        /* ---------- MOBILE ---------- */
+
+        footer a {
+
+            color: white;
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
 
         @media (max-width: 700px) {
 
+            .hero {
+
+                padding: 60px 20px;
+
+            }
+
+
             .hero h1 {
+
                 font-size: 2.2rem;
+
             }
 
-            .image-grid {
-                grid-template-columns: 1fr;
+
+            .hero p {
+
+                font-size: 1.05rem;
+
             }
 
-            .image-grid img {
-                height: auto;
+
+            .container {
+
+                padding: 40px 20px;
+
             }
+
+
+            h2 {
+
+                font-size: 1.7rem;
+
+            }
+
         }
 
     </style>
+
 </head>
+
+
 
 <body>
 
-<!-- ========================================================= -->
-<!-- HERO -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     BACK TO PORTFOLIO
+========================================================= -->
+
+<div class="back-bar">
+
+    <div class="back-bar-inner">
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Back to Portfolio
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <header class="hero">
 
-    <h1>Modular Resin Infusion Table</h1>
+    <h1>
+        Modular Resin Infusion Table
+    </h1>
+
 
     <p>
-        Design and experimental validation of a reusable vacuum-infusion
-        platform for interchangeable composite molds.
+
+        Design and experimental validation of a reusable
+        vacuum-infusion platform for interchangeable
+        composite molds.
+
     </p>
 
 </header>
 
 
+
 <main class="container">
 
 
-<!-- ========================================================= -->
-<!-- PROJECT OVERVIEW -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     PROJECT OVERVIEW
+========================================================= -->
 
 <section>
 
-    <h2>Project Overview</h2>
+    <h2>
+        Project Overview
+    </h2>
+
 
     <p>
-        Traditional composite resin-infusion tooling is typically designed
-        around a specific part geometry. This means that new tooling often
-        needs to be manufactured for every new part, requiring additional
-        material, manufacturing time, and workspace.
+
+        Traditional composite resin-infusion tooling is
+        typically designed around a specific part geometry.
+
+        This means that new tooling often needs to be
+        manufactured for every new part, requiring
+        additional material, manufacturing time, and
+        workspace.
+
     </p>
+
 
     <p>
-        The goal of this project was to develop a standardized resin-infusion
-        table that separates the reusable vacuum-sealing surface from the
-        part-specific mold. Smaller interchangeable molds can then be installed
-        into the table rather than manufacturing an entirely new infusion tool
-        for every part.
+
+        The goal of this project was to develop a
+        standardized resin-infusion table that separates
+        the reusable vacuum-sealing surface from the
+        part-specific mold.
+
+        Smaller interchangeable molds can then be installed
+        into the table rather than manufacturing an entirely
+        new infusion tool for every part.
+
     </p>
+
 
     <p>
-        The system was also designed as an educational platform that could be
-        used to demonstrate composite resin-infusion technology to students.
+
+        The system was also designed as an educational
+        platform that could be used to demonstrate
+        composite resin-infusion technology to students.
+
     </p>
 
+
+
+    <!-- PROJECT INFORMATION -->
 
     <div class="project-info">
 
-        <div class="info-card">
-            <strong>Project Type</strong>
-            Composite Manufacturing / Engineering Design
-        </div>
 
         <div class="info-card">
-            <strong>Institution</strong>
+
+            <strong>
+                Project Type
+            </strong>
+
+            Composite Manufacturing /
+            Engineering Design
+
+        </div>
+
+
+        <div class="info-card">
+
+            <strong>
+                Institution
+            </strong>
+
             Winona State University
+
         </div>
 
+
         <div class="info-card">
-            <strong>Team</strong>
+
+            <strong>
+                Team
+            </strong>
+
             5 Engineering Students
+
         </div>
 
+
         <div class="info-card">
-            <strong>Manufacturing Processes</strong>
-            Vacuum Infusion, Thermoforming, 3D Printing
+
+            <strong>
+                Manufacturing Processes
+            </strong>
+
+            Vacuum Infusion,
+            Thermoforming,
+            3D Printing
+
         </div>
+
 
     </div>
 
 
-    <!-- CHANGE THIS IMAGE -->
+
+    <!-- =====================================================
+         COVER IMAGE
+
+         FILE:
+         images/infusion-table-cover.jpg
+    ====================================================== -->
+
     <img
-        src="images/infusion-table.jpg"
+
+        src="images/infusion-table-cover.jpg"
+
         alt="Modular resin infusion table prototype"
+
         class="hero-image"
+
     >
 
-</section>
 
+    <p class="caption">
 
-<!-- ========================================================= -->
-<!-- MY CONTRIBUTIONS -->
-<!-- ========================================================= -->
+        Prototype modular resin infusion table and
+        vacuum system.
 
-<section>
-
-    <h2>My Contributions</h2>
-
-    <!-- EDIT THIS SECTION TO MATCH WHAT YOU PERSONALLY DID -->
-
-    <p>
-        This project was completed as part of a five-person engineering team.
-        My individual contributions included:
     </p>
 
-    <ul>
-        <li>[Add what you personally designed]</li>
-        <li>[Add what you personally manufactured]</li>
-        <li>[Add CAD or 3D printing work]</li>
-        <li>[Add your role during the resin infusion]</li>
-        <li>[Add testing or data analysis you performed]</li>
-        <li>[Add presentation/research responsibilities]</li>
-    </ul>
 
 </section>
 
 
-<!-- ========================================================= -->
-<!-- ENGINEERING OBJECTIVES -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     MY CONTRIBUTIONS
+========================================================= -->
 
 <section>
 
-    <h2>Engineering Objectives</h2>
+    <h2>
+        My Contributions
+    </h2>
+
+
+    <p>
+
+        This project was completed as part of a
+        five-person engineering team.
+
+        My individual contributions included:
+
+    </p>
+
+
+    <!--
+        EDIT THESE TO DESCRIBE EXACTLY WHAT YOU DID.
+    -->
+
+    <ul>
+
+        <li>
+            [Add what you personally designed]
+        </li>
+
+        <li>
+            [Add what you personally manufactured]
+        </li>
+
+        <li>
+            [Add CAD or 3D printing work]
+        </li>
+
+        <li>
+            [Add your role during resin infusion testing]
+        </li>
+
+        <li>
+            [Add testing or analysis you performed]
+        </li>
+
+        <li>
+            [Add presentation or research responsibilities]
+        </li>
+
+    </ul>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     ENGINEERING OBJECTIVES
+========================================================= -->
+
+<section>
+
+    <h2>
+        Engineering Objectives
+    </h2>
+
 
     <div class="result-grid">
 
-        <div class="result-card">
-            <h3>Reusable Platform</h3>
-            <p>
-                Create a permanent infusion surface that can be reused
-                instead of manufacturing a completely new tool for every part.
-            </p>
-        </div>
 
         <div class="result-card">
-            <h3>Interchangeable Molds</h3>
+
+            <h3>
+                Reusable Platform
+            </h3>
+
             <p>
-                Allow smaller part-specific molds to be installed and
-                removed from the main infusion table.
+
+                Create a permanent infusion surface that
+                can be reused instead of manufacturing a
+                completely new tool for every part.
+
             </p>
+
         </div>
 
-        <div class="result-card">
-            <h3>Reduce Material</h3>
-            <p>
-                Reduce the amount of tooling material required for
-                new composite part geometries.
-            </p>
-        </div>
+
 
         <div class="result-card">
-            <h3>Maintain Vacuum</h3>
+
+            <h3>
+                Interchangeable Molds
+            </h3>
+
             <p>
-                Develop a sealing system capable of maintaining the
-                vacuum required for resin infusion.
+
+                Allow smaller part-specific molds to be
+                installed and removed from the main
+                infusion table.
+
             </p>
+
         </div>
+
+
+
+        <div class="result-card">
+
+            <h3>
+                Reduce Material
+            </h3>
+
+            <p>
+
+                Reduce the amount of tooling material
+                required for new composite part
+                geometries.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="result-card">
+
+            <h3>
+                Maintain Vacuum
+            </h3>
+
+            <p>
+
+                Develop a sealing system capable of
+                maintaining the vacuum required for
+                resin infusion.
+
+            </p>
+
+        </div>
+
 
     </div>
+
 
 </section>
 
 
-<!-- ========================================================= -->
-<!-- DESIGN CONCEPT -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     DESIGN CONCEPT
+========================================================= -->
 
 <section>
 
-    <h2>Design Concept</h2>
+    <h2>
+        Design Concept
+    </h2>
+
 
     <p>
-        The primary design concept was to separate the vacuum-sealing
-        flange from the actual part mold.
+
+        The primary design concept was to separate the
+        vacuum-sealing flange from the actual part mold.
+
     </p>
 
+
     <p>
-        Rather than creating a complete infusion tool for every new
-        geometry, the table provides the reusable sealing surface while
-        a smaller thermoformed insert contains the geometry of the part.
+
+        Rather than creating a complete infusion tool for
+        every new geometry, the table provides the reusable
+        sealing surface while a smaller thermoformed insert
+        contains the geometry of the part.
+
     </p>
+
 
 
     <div class="highlight">
 
-        <strong>Key Design Feature:</strong>
+
+        <strong>
+            Key Design Feature:
+        </strong>
+
 
         <p>
-            A 6-inch flange surrounding the mold cavity provides the
-            required area for the vacuum seal. By integrating this flange
-            into the reusable table, only the smaller mold insert needs
-            to change between parts.
+
+            A 6-inch flange surrounding the mold cavity
+            provides the required area for the vacuum seal.
+
+            By integrating this flange into the reusable
+            table, only the smaller mold insert needs to
+            change between parts.
+
         </p>
+
 
     </div>
 
 
-    <!-- REPLACE WITH YOUR DESIGN DIAGRAM -->
-    <img
-        src="images/table-design.png"
-        alt="Diagram of reusable infusion table and mold insert"
-        class="single-image"
-    >
-
-    <p class="caption">
-        Conceptual design showing the reusable table flange and
-        interchangeable mold insert.
-    </p>
-
 </section>
 
 
-<!-- ========================================================= -->
-<!-- PROTOTYPE -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     PROTOTYPE DEVELOPMENT
+========================================================= -->
 
 <section>
 
-    <h2>Prototype Development</h2>
+    <h2>
+        Prototype Development
+    </h2>
+
 
     <p>
-        A physical prototype was constructed to determine whether the
-        interchangeable mold concept could maintain vacuum and successfully
-        perform a composite resin infusion.
+
+        A physical prototype was constructed to determine
+        whether the interchangeable mold concept could
+        maintain vacuum and successfully perform a
+        composite resin infusion.
+
     </p>
 
-    <h3>Prototype Components</h3>
+
+
+    <h3>
+        Prototype Components
+    </h3>
+
 
     <ul>
-        <li>Reusable infusion table</li>
-        <li>Thermoformed PETG mold insert</li>
-        <li>Vacuum pump</li>
-        <li>Vacuum pot</li>
-        <li>Vacuum bag</li>
-        <li>Sealant tape</li>
-        <li>Resin inlet</li>
-        <li>Vacuum line</li>
-        <li>Composite reinforcement</li>
+
+        <li>
+            Reusable infusion table
+        </li>
+
+        <li>
+            Thermoformed PETG mold insert
+        </li>
+
+        <li>
+            Vacuum pump
+        </li>
+
+        <li>
+            Vacuum pot
+        </li>
+
+        <li>
+            Vacuum bag
+        </li>
+
+        <li>
+            Sealant tape
+        </li>
+
+        <li>
+            Resin inlet
+        </li>
+
+        <li>
+            Vacuum line
+        </li>
+
+        <li>
+            Composite reinforcement
+        </li>
+
     </ul>
 
 
-    <!-- CHANGE IMAGE -->
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIMENTAL TESTING
+========================================================= -->
+
+<section>
+
+    <h2>
+        Experimental Testing
+    </h2>
+
+
+    <p>
+
+        A resin infusion was conducted using the prototype
+        table and thermoformed mold.
+
+        Sealant tape was used to secure the vacuum bag and
+        was also tested as a method of attaching the PETG
+        mold to the reusable table.
+
+    </p>
+
+
+    <p>
+
+        Resin was introduced near the center of the tool
+        and vacuum pressure drew the resin through the
+        reinforcement toward the vacuum line.
+
+    </p>
+
+
+
+    <!-- =====================================================
+         EXPERIMENTAL SETUP IMAGE
+
+         FILE:
+         images/experimental-setup.jpg
+    ====================================================== -->
+
     <img
-        src="images/prototype.jpg"
-        alt="Resin infusion table prototype"
+
+        src="images/experimental-setup.jpg"
+
+        alt="Resin infusion experimental setup"
+
         class="single-image"
+
     >
 
+
     <p class="caption">
-        Prototype infusion table and vacuum system.
+
+        Experimental resin infusion setup showing
+        the front and back of the mold.
+
     </p>
+
 
 </section>
 
 
-<!-- ========================================================= -->
-<!-- EXPERIMENTAL TESTING -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     RESULTS
+========================================================= -->
 
 <section>
 
-    <h2>Experimental Testing</h2>
+    <h2>
+        Results
+    </h2>
+
 
     <p>
-        A resin infusion was conducted using the prototype table and
-        thermoformed mold. Sealant tape was used to secure the vacuum bag
-        and was also tested as a method of attaching the PETG mold to
-        the reusable table.
+
+        The prototype successfully maintained vacuum and
+        demonstrated that composite parts could be infused
+        using interchangeable mold inserts.
+
     </p>
 
-    <p>
-        Resin was introduced near the center of the tool and vacuum
-        pressure drew the resin through the reinforcement toward the
-        vacuum line.
-    </p>
-
-
-    <div class="image-grid">
-
-        <!-- CHANGE IMAGE -->
-        <img
-            src="images/infusion-front.jpg"
-            alt="Front side of resin infusion test"
-        >
-
-        <!-- CHANGE IMAGE -->
-        <img
-            src="images/infusion-back.jpg"
-            alt="Back side of resin infusion test"
-        >
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- RESULTS -->
-<!-- ========================================================= -->
-
-<section>
-
-    <h2>Results</h2>
-
-    <p>
-        The prototype successfully maintained vacuum and demonstrated
-        that composite parts could be infused using interchangeable
-        mold inserts.
-    </p>
 
 
     <div class="result-grid">
 
+
         <div class="result-card">
 
-            <h3>Successful Vacuum</h3>
+            <h3>
+                Successful Vacuum
+            </h3>
 
             <p>
-                The table and mold assembly successfully maintained
-                sufficient vacuum during the infusion process.
+
+                The table and mold assembly successfully
+                maintained sufficient vacuum during the
+                infusion process.
+
             </p>
 
         </div>
 
 
+
         <div class="result-card">
 
-            <h3>Interchangeable Mold Concept</h3>
+            <h3>
+                Interchangeable Mold Concept
+            </h3>
 
             <p>
-                The test demonstrated that smaller part-specific molds
-                could be integrated into the reusable table.
+
+                The test demonstrated that smaller
+                part-specific molds could be integrated
+                into the reusable table.
+
             </p>
 
         </div>
 
 
+
         <div class="result-card">
 
-            <h3>Successful Resin Flow</h3>
+            <h3>
+                Successful Resin Flow
+            </h3>
 
             <p>
-                Vacuum pressure successfully drew resin through the
-                reinforcement and produced composite parts.
+
+                Vacuum pressure successfully drew resin
+                through the reinforcement and produced
+                composite parts.
+
             </p>
 
         </div>
+
 
     </div>
 
 
-    <h3>Manufactured Parts</h3>
 
-    <div class="image-grid">
-
-        <!-- REPLACE THESE WITH YOUR FOUR RESULT PHOTOS -->
-
-        <img
-            src="images/result-1.jpg"
-            alt="Composite infusion result 1"
-        >
-
-        <img
-            src="images/result-2.jpg"
-            alt="Composite infusion result 2"
-        >
-
-        <img
-            src="images/result-3.jpg"
-            alt="Composite infusion result 3"
-        >
-
-        <img
-            src="images/result-4.jpg"
-            alt="Composite infusion result 4"
-        >
-
-    </div>
-
-</section>
+    <h3>
+        Manufactured Parts
+    </h3>
 
 
-<!-- ========================================================= -->
-<!-- ENGINEERING ANALYSIS -->
-<!-- ========================================================= -->
 
-<section>
+    <!-- =====================================================
+         RESULTS IMAGE
 
-    <h2>Engineering Analysis</h2>
+         FILE:
+         images/results.jpg
+    ====================================================== -->
 
-    <p>
-        Although the prototype demonstrated that the overall concept
-        was viable, inspection of the manufactured parts revealed several
-        processing defects.
+    <img
+
+        src="images/results.jpg"
+
+        alt="Composite parts produced during resin infusion testing"
+
+        class="single-image"
+
+    >
+
+
+    <p class="caption">
+
+        Composite parts produced during experimental
+        resin infusion testing.
+
     </p>
 
 
+</section>
+
+
+
+<!-- =========================================================
+     ENGINEERING ANALYSIS
+========================================================= -->
+
+<section>
+
+    <h2>
+        Engineering Analysis
+    </h2>
+
+
+    <p>
+
+        Although the prototype demonstrated that the
+        overall concept was viable, inspection of the
+        manufactured parts revealed several processing
+        defects.
+
+    </p>
+
+
+
+    <!-- DRY SPOTS -->
+
     <div class="analysis-card">
 
-        <h3>Dry Spots</h3>
+
+        <h3>
+            Dry Spots
+        </h3>
+
 
         <p>
-            Several areas of the laminate appeared lighter and were not
-            completely saturated with resin.
+
+            Several areas of the laminate appeared lighter
+            and were not completely saturated with resin.
+
         </p>
 
-        <p>
-            <strong>Likely Cause:</strong>
-            Uneven resin flow prevented resin from reaching all areas of
-            the reinforcement before curing.
-        </p>
 
         <p>
-            <strong>Design Improvement:</strong>
-            Modify resin inlet locations, vacuum locations, and flow-media
-            placement to produce more uniform resin distribution.
+
+            <strong>
+                Likely Cause:
+            </strong>
+
+            Uneven resin flow prevented resin from reaching
+            all areas of the reinforcement before curing.
+
         </p>
+
+
+        <p>
+
+            <strong>
+                Design Improvement:
+            </strong>
+
+            Modify resin inlet locations, vacuum locations,
+            and flow-media placement to produce more
+            uniform resin distribution.
+
+        </p>
+
 
     </div>
 
 
+
+    <!-- AIR VOIDS -->
+
     <div class="analysis-card">
 
-        <h3>Air Voids</h3>
+
+        <h3>
+            Air Voids
+        </h3>
+
 
         <p>
-            Visible bubbles were observed in portions of the finished
-            composite laminate.
+
+            Visible bubbles were observed in portions of
+            the finished composite laminate.
+
         </p>
 
-        <p>
-            <strong>Likely Cause:</strong>
-            Small vacuum leaks or insufficient removal of air before
-            resin entered the laminate.
-        </p>
 
         <p>
-            <strong>Design Improvement:</strong>
-            Improve vacuum sealing and verify vacuum integrity before
-            beginning the infusion.
+
+            <strong>
+                Likely Cause:
+            </strong>
+
+            Small vacuum leaks or insufficient removal of
+            air before resin entered the laminate.
+
         </p>
+
+
+        <p>
+
+            <strong>
+                Design Improvement:
+            </strong>
+
+            Improve vacuum sealing and verify vacuum
+            integrity before beginning the infusion.
+
+        </p>
+
 
     </div>
 
 
+
+    <!-- RESIN DISTRIBUTION -->
+
     <div class="analysis-card">
 
-        <h3>Uneven Resin Distribution</h3>
+
+        <h3>
+            Uneven Resin Distribution
+        </h3>
+
 
         <p>
-            Resin did not flow evenly through all regions of the part,
-            contributing to incomplete fiber saturation.
+
+            Resin did not flow evenly through all regions
+            of the part, contributing to incomplete fiber
+            saturation.
+
         </p>
 
+
         <p>
-            <strong>Design Improvement:</strong>
-            Redesign the flow path and experiment with alternative
-            resin inlet and vacuum-line configurations.
+
+            <strong>
+                Design Improvement:
+            </strong>
+
+            Redesign the flow path and experiment with
+            alternative resin inlet and vacuum-line
+            configurations.
+
         </p>
+
 
     </div>
 
 
+
+    <!-- MOLD DESIGN -->
+
     <div class="analysis-card">
 
-        <h3>Mold Design</h3>
+
+        <h3>
+            Mold Design
+        </h3>
+
 
         <p>
-            Mold geometry, material selection, and warping affected
-            both resin flow and the demolding process.
+
+            Mold geometry, material selection, and warping
+            affected both resin flow and the demolding
+            process.
+
         </p>
 
+
         <p>
-            <strong>Design Improvement:</strong>
-            Investigate alternative thermoformable materials and
-            improved mold-manufacturing methods.
+
+            <strong>
+                Design Improvement:
+            </strong>
+
+            Investigate alternative thermoformable
+            materials and improved mold-manufacturing
+            methods.
+
         </p>
+
 
     </div>
+
 
 </section>
 
 
-<!-- ========================================================= -->
-<!-- FUTURE WORK -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     FUTURE WORK
+========================================================= -->
 
 <section>
 
-    <h2>Future Design Improvements</h2>
+    <h2>
+        Future Design Improvements
+    </h2>
+
 
     <div class="future-grid">
 
+
         <div class="future-card">
 
-            <h3>Vacuum Sealing</h3>
+            <h3>
+                Vacuum Sealing
+            </h3>
 
             <p>
-                Test alternative sealants to improve the connection
-                between the removable mold and infusion table.
+
+                Test alternative sealants to improve the
+                connection between the removable mold and
+                infusion table.
+
             </p>
 
         </div>
 
 
+
         <div class="future-card">
 
-            <h3>Mold Material</h3>
+            <h3>
+                Mold Material
+            </h3>
 
             <p>
-                Identify a thermoformable material that can withstand
-                demolding while releasing more easily from epoxy.
+
+                Identify a thermoformable material that
+                can withstand demolding while releasing
+                more easily from epoxy.
+
             </p>
 
         </div>
 
 
+
         <div class="future-card">
 
-            <h3>Surface Coating</h3>
+            <h3>
+                Surface Coating
+            </h3>
 
             <p>
-                Investigate longer-lasting surface coatings that improve
-                release performance and table durability.
+
+                Investigate longer-lasting surface coatings
+                that improve release performance and table
+                durability.
+
             </p>
 
         </div>
 
 
+
         <div class="future-card">
 
-            <h3>Mold Accuracy</h3>
+            <h3>
+                Mold Accuracy
+            </h3>
 
             <p>
-                Improve mold-manufacturing methods to reduce warping
-                during fabrication.
+
+                Improve mold-manufacturing methods to
+                reduce warping during fabrication.
+
             </p>
 
         </div>
+
 
     </div>
 
+
 </section>
 
 
-<!-- ========================================================= -->
-<!-- CONCLUSION -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     CONCLUSION
+========================================================= -->
 
 <section>
 
-    <h2>Conclusion</h2>
+    <h2>
+        Conclusion
+    </h2>
+
 
     <p>
-        The prototype demonstrated that a reusable resin-infusion table
-        with interchangeable molds is capable of performing composite
-        resin infusion.
+
+        The prototype demonstrated that a reusable
+        resin-infusion table with interchangeable molds
+        is capable of performing composite resin infusion.
+
     </p>
 
-    <p>
-        The mold system, vacuum setup, and material layout demonstrated
-        the feasibility of the modular tooling concept. Testing also
-        identified several areas for improvement, particularly resin-flow
-        control, vacuum sealing, mold material selection, and demolding.
-    </p>
 
     <p>
-        With additional design iterations, the platform could provide a
-        repeatable system for manufacturing and demonstrating multiple
-        composite part geometries without requiring a completely new
+
+        The mold system, vacuum setup, and material layout
+        demonstrated the feasibility of the modular tooling
+        concept.
+
+        Testing also identified several areas for
+        improvement, particularly resin-flow control,
+        vacuum sealing, mold material selection, and
+        demolding.
+
+    </p>
+
+
+    <p>
+
+        With additional design iterations, the platform
+        could provide a repeatable system for manufacturing
+        and demonstrating multiple composite part
+        geometries without requiring a completely new
         infusion tool for each design.
+
     </p>
+
 
 </section>
 
 
-<!-- ========================================================= -->
-<!-- SKILLS -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     ENGINEERING SKILLS
+========================================================= -->
 
 <section>
 
-    <h2>Engineering Skills Demonstrated</h2>
+    <h2>
+        Engineering Skills Demonstrated
+    </h2>
+
 
     <div class="skills">
 
-        <span class="skill">Composite Manufacturing</span>
 
-        <span class="skill">Vacuum Resin Infusion</span>
+        <span class="skill">
+            Composite Manufacturing
+        </span>
 
-        <span class="skill">Vacuum Bagging</span>
 
-        <span class="skill">Thermoforming</span>
+        <span class="skill">
+            Vacuum Resin Infusion
+        </span>
 
-        <span class="skill">3D Printing</span>
 
-        <span class="skill">Prototype Development</span>
+        <span class="skill">
+            Vacuum Bagging
+        </span>
 
-        <span class="skill">Experimental Testing</span>
 
-        <span class="skill">Failure Analysis</span>
+        <span class="skill">
+            Thermoforming
+        </span>
 
-        <span class="skill">Process Improvement</span>
 
-        <span class="skill">Engineering Design</span>
+        <span class="skill">
+            3D Printing
+        </span>
 
-        <span class="skill">Team Collaboration</span>
 
-        <span class="skill">Technical Communication</span>
+        <span class="skill">
+            Prototype Development
+        </span>
+
+
+        <span class="skill">
+            Experimental Testing
+        </span>
+
+
+        <span class="skill">
+            Failure Analysis
+        </span>
+
+
+        <span class="skill">
+            Process Improvement
+        </span>
+
+
+        <span class="skill">
+            Engineering Design
+        </span>
+
+
+        <span class="skill">
+            Team Collaboration
+        </span>
+
+
+        <span class="skill">
+            Technical Communication
+        </span>
+
 
     </div>
 
+
 </section>
+
 
 
 </main>
 
 
-<!-- ========================================================= -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
+
     <p>
+
         Engineering Portfolio | Will Gunderson
+
     </p>
+
+
+    <p>
+
+        <a href="index.html">
+
+            ← Return to Portfolio
+
+        </a>
+
+    </p>
+
 
 </footer>
 
 
+
 </body>
+
 </html>
